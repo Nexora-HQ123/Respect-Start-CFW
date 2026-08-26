@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Respect Start CFW</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --blue:#2878ff;
+    --blue2:#1559d6;
+    --pink:#ff4f9a;
+    --pink2:#ff78b3;
+    --white:#ffffff;
+    --text:#f5f7ff;
+    --muted:#aeb8cf;
+    --dark:#080d18;
+    --dark2:#0d1422;
+    --card:rgba(17,26,43,.72);
+    --border:rgba(255,255,255,.09);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(40,120,255,.14),transparent 28%),
+        radial-gradient(circle at 85% 30%,rgba(255,79,154,.11),transparent 28%),
+        linear-gradient(145deg,#070c16,#0b1220 50%,#080d18);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.22;
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    position:relative;
+    z-index:20;
+    padding:22px 5%;
+}
+
+.nav{
+    max-width:1250px;
+    margin:auto;
+    height:78px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:10px;
+    padding:0 25px;
+    background:rgba(9,15,27,.78);
+    border:1px solid var(--border);
+    border-radius:24px;
+    backdrop-filter:blur(18px);
+    box-shadow:0 15px 45px rgba(0,0,0,.22);
+}
+
+.nav-side{
+    display:flex;
+    align-items:center;
+}
+
+.nav-right{
+    justify-content:flex-end;
+    gap:14px;
+}
+
+.nav-left{
+    justify-content:flex-start;
+    gap:14px;
+}
+
+.nav a{
+    color:#dce4f5;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:700;
+    transition:.25s;
+    white-space:nowrap;
+}
+
+.nav a:hover{
+    color:#fff;
+}
+
+.nav .active{
+    color:var(--pink2);
+}
+
+.logo{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    display:block;
+    filter:drop-shadow(0 8px 20px rgba(255,79,154,.16));
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+    max-width:1250px;
+    margin:auto;
+    padding:90px 5% 80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,rgba(40,120,255,.14),transparent 68%);
+    left:50%;
+    top:30%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.owner-box{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 18px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.035);
+    border-radius:50px;
+    margin-bottom:28px;
+    color:#bfc9dd;
+    font-size:14px;
+}
+
+.owner-box strong{
+    color:#fff;
+}
+
+.owner-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--pink);
+    box-shadow:0 0 14px var(--pink);
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,82px);
+    line-height:1.1;
+    font-weight:900;
+    letter-spacing:-2px;
+    margin-bottom:22px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,var(--blue),var(--pink));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:var(--muted);
+    max-width:690px;
+    margin:0 auto 32px;
+    font-size:17px;
+    line-height:2;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:165px;
+    padding:13px 25px;
+    border-radius:13px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:14px;
+    transition:.25s;
+}
+
+.btn-main{
+    color:white;
+    background:linear-gradient(135deg,var(--pink),#e93783);
+    box-shadow:0 12px 35px rgba(255,79,154,.2);
+}
+
+.btn-main:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    color:#e9efff;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.035);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.07);
+    transform:translateY(-3px);
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    max-width:1250px;
+    margin:auto;
+    padding:55px 5%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title span{
+    color:var(--pink2);
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    font-size:34px;
+    margin-top:8px;
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:8px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    align-items:stretch;
+}
+
+.about-card,
+.info-card{
+    background:linear-gradient(145deg,rgba(17,27,45,.84),rgba(10,17,29,.7));
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:35px;
+    position:relative;
+    overflow:hidden;
+}
+
+.about-card::after,
+.info-card::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:radial-gradient(circle,rgba(40,120,255,.12),transparent 70%);
+    left:-60px;
+    bottom:-80px;
+}
+
+.about-card h3{
+    font-size:25px;
+    margin-bottom:14px;
+}
+
+.about-card p,
+.info-card p{
+    color:var(--muted);
+    line-height:2;
+    font-size:15px;
+}
+
+.more-btn{
+    display:inline-flex;
+    margin-top:24px;
+    color:var(--pink2);
+    text-decoration:none;
+    font-weight:800;
+    border-bottom:1px solid rgba(255,79,154,.3);
+    padding-bottom:4px;
+}
+
+/* ================= RULES ================= */
+
+.rules-preview{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.rule-card{
+    padding:28px;
+    border-radius:22px;
+    background:rgba(15,24,40,.76);
+    border:1px solid var(--border);
+    transition:.25s;
+}
+
+.rule-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(255,79,154,.25);
+}
+
+.rule-icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:linear-gradient(135deg,rgba(40,120,255,.15),rgba(255,79,154,.13));
+    margin-bottom:17px;
+    font-size:20px;
+}
+
+.rule-card h3{
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.rule-card p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:13px;
+}
+
+.rules-button{
+    text-align:center;
+    margin-top:30px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    border-radius:28px;
+    padding:48px 30px;
+    text-align:center;
+    background:
+        linear-gradient(135deg,rgba(40,120,255,.11),rgba(255,79,154,.08)),
+        rgba(12,20,34,.8);
+    border:1px solid var(--border);
+}
+
+.contact-box h2{
+    font-size:31px;
+    margin-bottom:12px;
+}
+
+.contact-box p{
+    color:var(--muted);
+    max-width:650px;
+    margin:auto auto 25px;
+    line-height:1.9;
+}
+
+/* ================= PAGE ================= */
+
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 5% 90px;
+}
+
+.page-head{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.page-head .mini{
+    color:var(--pink2);
+    font-size:13px;
+    font-weight:800;
+}
+
+.page-head h1{
+    font-size:48px;
+    margin:10px 0;
+}
+
+.page-head p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    line-height:2;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:30px;
+    padding:10px 17px;
+    color:#e9efff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    transition:.25s;
+}
+
+.back:hover{
+    color:#fff;
+    background:rgba(255,255,255,.08);
+    border-color:rgba(255,79,154,.28);
+    transform:translateX(-3px);
+}
+
+/* ================= RULES PAGE ================= */
+
+.notice{
+    padding:22px 25px;
+    border-radius:18px;
+    background:rgba(255,79,154,.055);
+    border:1px solid rgba(255,79,154,.18);
+    color:#dce2ef;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.notice strong{
+    color:var(--pink2);
+}
+
+.rule-section{
+    background:rgba(12,20,34,.8);
+    border:1px solid var(--border);
+    border-radius:20px;
+    margin-bottom:14px;
+    overflow:hidden;
+}
+
+.rule-section button{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#fff;
+    padding:22px 24px;
+    text-align:right;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:17px;
+    font-weight:800;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.rule-section button span:last-child{
+    color:var(--pink2);
+    transition:.25s;
+}
+
+.rule-content{
+    display:none;
+    padding:0 25px 25px;
+    color:#aeb8cf;
+    line-height:2;
+}
+
+.rule-content.open{
+    display:block;
+}
+
+.rule-content ol{
+    padding-right:22px;
+}
+
+.rule-content li{
+    margin:9px 0;
+}
+
+/* ================= STORE ================= */
+
+.maintenance{
+    text-align:center;
+    max-width:700px;
+    margin:70px auto;
+    padding:60px 30px;
+    background:rgba(13,21,35,.82);
+    border:1px solid var(--border);
+    border-radius:28px;
+}
+
+.maintenance-icon{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.maintenance h2{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.maintenance p{
+    color:var(--muted);
+    line-height:2;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    max-width:1250px;
+    margin:30px auto 0;
+    padding:45px 5% 30px;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:35px;
+}
+
+.footer-brand h3{
+    font-size:25px;
+    margin-bottom:9px;
+}
+
+.footer-brand p{
+    color:var(--muted);
+    line-height:1.9;
+    max-width:400px;
+    font-size:14px;
+}
+
+.footer-title{
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.footer-links a{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:14px;
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.owner-footer{
+    background:rgba(255,255,255,.035);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:15px 18px;
+}
+
+.owner-footer small{
+    color:#8995ad;
+    display:block;
+    margin-bottom:4px;
+}
+
+.owner-footer strong{
+    font-size:18px;
+    color:#fff;
+}
+
+.copyright{
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.06);
+    color:#758097;
+    font-size:12px;
+    text-align:center;
+}
+
+/* ================= LANGUAGE ================= */
+
+.lang{
+    cursor:pointer;
+    color:#fff!important;
+    padding:7px 11px;
+    border-radius:9px;
+    background:rgba(255,255,255,.06);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav{
+        grid-template-columns:1fr auto 1fr;
+        gap:8px;
+        padding:0 13px;
+    }
+
+    .nav-right{
+        gap:10px;
+    }
+
+    .nav-left{
+        gap:10px;
+    }
+
+    .nav a{
+        font-size:12px;
+    }
+
+    .logo{
+        width:52px;
+        height:52px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .rules-preview{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:12px 3%;
+    }
+
+    .nav{
+        height:68px;
+        border-radius:18px;
+    }
+
+    .nav-right{
+        gap:7px;
+    }
+
+    .nav-left{
+        gap:7px;
+    }
+
+    .nav a{
+        font-size:10px;
+    }
+
+    .nav .lang{
+        padding:5px 7px;
+    }
+
+    .logo{
+        width:46px;
+        height:46px;
+    }
+
+    .hero{
+        min-height:590px;
+        padding-top:60px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .rules-preview{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .page-head h1{
+        font-size:37px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="nav">
+
+    <div class="nav-side nav-right">
+        <a href="?page=about" data-ar="من نحن" data-en="About Us">من نحن</a>
+        <a href="?page=rules" data-ar="القوانين" data-en="Rules">القوانين</a>
+    </div>
+
+    <a href="index.html">
+        <img src="logo.png" class="logo" alt="Respect Start CFW">
+    </a>
+
+    <div class="nav-side nav-left">
+        <a href="?page=store" data-ar="المتجر" data-en="Store">المتجر</a>
+        <a href="?page=contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+        <a onclick="toggleLanguage()" class="lang" id="langButton">EN</a>
+    </div>
+
+</nav>
+</header>
+
+<main id="app"></main>
+
+<footer>
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+            <h3>Respect <span class="gradient">Start</span></h3>
+            <p data-ar="مجتمع CFW Roleplay يهتم بتقديم تجربة رول بلاي منظمة، محترمة ومختلفة، حيث يجتمع اللاعبون لصناعة تجارب لا تُنسى."
+               data-en="A CFW Roleplay community focused on delivering an organized, respectful and different roleplay experience.">
+               مجتمع CFW Roleplay يهتم بتقديم تجربة رول بلاي منظمة، محترمة ومختلفة، حيث يجتمع اللاعبون لصناعة تجارب لا تُنسى.
+            </p>
+        </div>
+
+        <div>
+            <div class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</div>
+
+            <div class="footer-links">
+                <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                <a href="?page=about" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="?page=rules" data-ar="القوانين" data-en="Rules">القوانين</a>
+                <a href="?page=store" data-ar="المتجر" data-en="Store">المتجر</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="footer-title" data-ar="إدارة السيرفر" data-en="Server Management">إدارة السيرفر</div>
+
+            <div class="owner-footer">
+                <small data-ar="Owner Server" data-en="Server Owner">Owner Server</small>
+                <strong>u4.i</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Respect Start CFW — All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+let language = localStorage.getItem("rs-language") || "ar";
+
+function applyLanguage(){
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-ar]").forEach(el=>{
+        el.textContent = language === "ar"
+            ? el.dataset.ar
+            : el.dataset.en;
+    });
+
+    const btn = document.getElementById("langButton");
+
+    if(btn){
+        btn.textContent = language === "ar" ? "EN" : "AR";
+    }
+}
+
+function toggleLanguage(){
+
+    language = language === "ar" ? "en" : "ar";
+
+    localStorage.setItem("rs-language",language);
+
+    render();
+
+    applyLanguage();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function homePage(){
+
+return `
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="owner-box">
+            <span class="owner-dot"></span>
+            <span>Owner Server:</span>
+            <strong>u4.i</strong>
+        </div>
+
+        <h1>
+            Respect
+            <span class="gradient">Start</span>
+        </h1>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "مجتمع CFW Roleplay صُمم ليقدم تجربة مختلفة، منظمة وراقية. مكان يجتمع فيه اللاعبون لصناعة قصصهم الخاصة، والالتزام بروح الرول بلاي الحقيقي."
+                :
+                "A CFW Roleplay community built to deliver a different, organized and high-quality experience. A place where players create their own stories through serious roleplay."
+            }
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="?page=rules" class="btn btn-main">
+                ${language==="ar" ? "الاطلاع على القوانين" : "View Rules"}
+            </a>
+
+            <a href="?page=about" class="btn btn-outline">
+                ${language==="ar" ? "اكتشف المزيد" : "Discover More"}
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="section-title">
+        <span>RESPECT START</span>
+
+        <h2>
+            ${language==="ar" ? "مجتمع وتجربة مختلفة" : "A Different Community & Experience"}
+        </h2>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "نضع التنظيم والاحترام وجودة التجربة في مقدمة أولوياتنا."
+                :
+                "Organization, respect and quality are at the heart of our community."
+            }
+        </p>
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <h3>
+                ${language==="ar" ? "من نحن؟" : "Who Are We?"}
+            </h3>
+
+            <p>
+                ${
+                    language==="ar"
+                    ?
+                    "Respect Start هو مجتمع CFW Roleplay يهدف إلى تقديم بيئة متوازنة تجمع بين المتعة والجدية، وتمنح كل لاعب فرصة لصناعة قصته الخاصة."
+                    :
+                    "Respect Start is a CFW Roleplay community designed to create a balanced environment between fun and serious roleplay."
+                }
+            </p>
+
+            <a href="?page=about" class="more-btn">
+                ${language==="ar" ? "اكتشف المزيد عنّا ←" : "Discover More About Us →"}
+            </a>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                ${language==="ar" ? "هوية المجتمع" : "Community Identity"}
+            </h3>
+
+            <p>
+                ${
+                    language==="ar"
+                    ?
+                    "نؤمن بأن الرول بلاي لا يعتمد على اللعب فقط، بل على احترام الآخرين، الالتزام بالقوانين، وبناء مواقف وقصص تجعل كل جلسة داخل السيرفر تجربة تستحق التذكر."
+                    :
+                    "We believe roleplay is more than just playing. It is about respecting others, following the rules and creating memorable stories."
+                }
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="section-title">
+
+        <span>SERVER RULES</span>
+
+        <h2>
+            ${language==="ar" ? "القوانين" : "Rules"}
+        </h2>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "مجموعة من الأنظمة التي تساعدنا على الحفاظ على تجربة عادلة ومنظمة."
+                :
+                "Rules that help us maintain a fair and organized experience."
+            }
+        </p>
+
+    </div>
+
+
+    <div class="rules-preview">
+
+        <div class="rule-card">
+            <div class="rule-icon">⚖</div>
+            <h3>${language==="ar" ? "القوانين العامة" : "General Rules"}</h3>
+            <p>${language==="ar" ? "الأساس الذي يحافظ على احترام وتنظيم المجتمع." : "The foundation of a respectful and organized community."}</p>
+        </div>
+
+        <div class="rule-card">
+            <div class="rule-icon">🎭</div>
+            <h3>${language==="ar" ? "قوانين الرول بلاي" : "Roleplay Rules"}</h3>
+            <p>${language==="ar" ? "أنظمة تساعد على تقديم تجربة رول بلاي واقعية." : "Rules designed for a realistic roleplay experience."}</p>
+        </div>
+
+        <div class="rule-card">
+            <div class="rule-icon">🛡</div>
+            <h3>${language==="ar" ? "الخوف على الحياة" : "Fear RP"}</h3>
+            <p>${language==="ar" ? "احترام حياة الشخصية والتعامل معها بالشكل الصحيح." : "Respecting your character's life during roleplay."}</p>
+        </div>
+
+        <div class="rule-card">
+            <div class="rule-icon">❤️</div>
+            <h3>${language==="ar" ? "تقدير الحياة" : "Value of Life"}</h3>
+            <p>${language==="ar" ? "التصرف بطريقة تحافظ على منطقية الموقف." : "Acting in a way that preserves realistic situations."}</p>
+        </div>
+
+        <div class="rule-card">
+            <div class="rule-icon">🧠</div>
+            <h3>Meta Gaming</h3>
+            <p>${language==="ar" ? "منع استخدام المعلومات الخارجة عن سياق الشخصية." : "Using information outside your character's knowledge is prohibited."}</p>
+        </div>
+
+        <div class="rule-card">
+            <div class="rule-icon">🎮</div>
+            <h3>Power Gaming</h3>
+            <p>${language==="ar" ? "منع فرض أفعال غير منطقية على اللاعبين أو المواقف." : "Forcing unrealistic actions on players or situations is prohibited."}</p>
+        </div>
+
+    </div>
+
+
+    <div class="rules-button">
+
+        <a href="?page=rules" class="btn btn-main">
+            ${language==="ar" ? "قراءة القوانين كاملة" : "Read Full Rules"}
+        </a>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="contact-box">
+
+        <h2>
+            ${language==="ar" ? "تواصل معنا" : "Contact Us"}
+        </h2>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "لديك استفسار؟ تريد معرفة المزيد عن المجتمع؟ انضم إلينا على Discord وتواصل مع أعضاء وإدارة Respect Start."
+                :
+                "Have a question or want to know more about our community? Join us on Discord and connect with Respect Start."
+            }
+        </p>
+
+        <a href="https://discord.gg/rs-1"
+           target="_blank"
+           class="btn btn-main">
+           Discord
+        </a>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+function aboutPage(){
+
+return `
+
+<div class="page">
+
+    <a href="index.html" class="back">
+        ← ${language==="ar" ? "العودة إلى الرئيسية" : "Back to Home"}
+    </a>
+
+    <div class="page-head">
+
+        <span class="mini">
+            RESPECT START
+        </span>
+
+        <h1>
+            ${language==="ar" ? "من نحن" : "About Us"}
+        </h1>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "تعرف أكثر على المجتمع الذي يقف خلف Respect Start."
+                :
+                "Learn more about the community behind Respect Start."
+            }
+        </p>
+
+    </div>
+
+
+    <div class="about-card">
+
+        ${
+            language==="ar"
+            ?
+            `
+            <h3>Respect Start CFW Roleplay</h3>
+
+            <p>
+            Respect Start هو مجتمع CFW Roleplay يهدف إلى بناء تجربة رول بلاي مختلفة عن المعتاد، من خلال توفير بيئة منظمة تجمع بين جودة اللعب، احترام اللاعبين، وتنوع المواقف التي يمكن لكل شخص أن يصنعها بنفسه.
+            </p>
+
+            <br>
+
+            <p>
+            نؤمن أن المجتمع القوي لا يعتمد على عدد أعضائه فقط، بل يعتمد على الأشخاص الذين يصنعون داخله التجارب والقصص والمواقف. لذلك نحاول أن نجعل كل لاعب جزءًا حقيقيًا من المجتمع، وليس مجرد رقم.
+            </p>
+
+            <br>
+
+            <p>
+            نركز على الرول بلاي المنطقي، التعامل المحترم، الالتزام بالأنظمة، وإعطاء الجميع فرصة عادلة للاستمتاع بتجربة السيرفر. كما نعمل باستمرار على تطوير المجتمع وإضافة أفكار وأنظمة جديدة تجعل التجربة أكثر استقرارًا ومتعة.
+            </p>
+
+            <br>
+
+            <p>
+            هدفنا هو بناء مجتمع يستمر ويتطور مع أعضائه، ويكون مكانًا تستطيع العودة إليه في أي وقت لتبدأ قصة جديدة، أو تكمل قصة صنعتها من قبل.
+            </p>
+
+            <br>
+
+            <p>
+            Respect Start ليس مجرد سيرفر؛ بل مجتمع يصنعه أعضاؤه، وتكبر هويته مع كل لاعب يشارك فيه.
+            </p>
+            `
+            :
+            `
+            <h3>Respect Start CFW Roleplay</h3>
+
+            <p>
+            Respect Start is a CFW Roleplay community built to create a different experience through organization, quality gameplay and meaningful roleplay.
+            </p>
+
+            <br>
+
+            <p>
+            We believe a strong community is not defined only by its member count, but by the people who create stories, situations and memorable moments inside it.
+            </p>
+
+            <br>
+
+            <p>
+            Our focus is realistic roleplay, respectful communication, fair rules and an environment where everyone has a chance to enjoy their experience.
+            </p>
+
+            <br>
+
+            <p>
+            We continuously work on improving the community, introducing new ideas and creating systems that make the server more stable and enjoyable.
+            </p>
+
+            <br>
+
+            <p>
+            Respect Start is more than a server. It is a community shaped by its members.
+            </p>
+            `
+        }
+
+    </div>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   STORE
+===================================================== */
+
+function storePage(){
+
+return `
+
+<div class="page">
+
+    <a href="index.html" class="back">
+        ← ${language==="ar" ? "العودة إلى الرئيسية" : "Back to Home"}
+    </a>
+
+    <div class="page-head">
+
+        <span class="mini">RESPECT START</span>
+
+        <h1>
+            ${language==="ar" ? "المتجر" : "Store"}
+        </h1>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "متجر Respect Start الرسمي."
+                :
+                "The official Respect Start store."
+            }
+        </p>
+
+    </div>
+
+
+    <div class="maintenance">
+
+        <div class="maintenance-icon">⚙</div>
+
+        <h2>
+            ${language==="ar" ? "المتجر تحت الصيانة" : "Store Under Maintenance"}
+        </h2>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "نعمل حاليًا على تجهيز المتجر وإضافة الخدمات والمزايا الخاصة بالمجتمع. سيتم فتح المتجر قريبًا."
+                :
+                "We are currently preparing the store and adding community services and features. The store will be available soon."
+            }
+        </p>
+
+    </div>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+function contactPage(){
+
+return `
+
+<div class="page">
+
+    <a href="index.html" class="back">
+        ← ${language==="ar" ? "العودة إلى الرئيسية" : "Back to Home"}
+    </a>
+
+    <div class="page-head">
+
+        <span class="mini">RESPECT START</span>
+
+        <h1>
+            ${language==="ar" ? "تواصل معنا" : "Contact Us"}
+        </h1>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "يسعدنا وجودك معنا."
+                :
+                "We are happy to have you with us."
+            }
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h2>
+            ${language==="ar" ? "مجتمع Respect Start بانتظارك" : "Respect Start is waiting for you"}
+        </h2>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "للاستفسارات، الدعم، التعرف على المجتمع أو التواصل مع الأعضاء والإدارة، يمكنك الانضمام إلى سيرفر Discord الرسمي."
+                :
+                "For questions, support, community information or communication with members and staff, join our official Discord server."
+            }
+        </p>
+
+        <a href="https://discord.gg/rs-1"
+           target="_blank"
+           class="btn btn-main">
+            Discord
+        </a>
+
+    </div>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   RULES
+===================================================== */
+
+const rules = [
+
+{
+titleAr:"القوانين العامة",
+titleEn:"General Rules",
+
+itemsAr:[
+"يجب احترام جميع أعضاء المجتمع وعدم الإساءة أو الاستفزاز المتعمد.",
+"يمنع استغلال الأخطاء أو الثغرات التي تؤثر على تجربة اللاعبين.",
+"يجب الالتزام بتعليمات الإدارة وقراراتها أثناء التعامل مع المخالفات.",
+"يمنع استخدام أي وسيلة تمنح اللاعب أفضلية غير عادلة.",
+"يجب المحافظة على أسلوب محترم في المحادثات النصية والصوتية.",
+"يمنع نشر المحتوى المخالف لأنظمة المجتمع أو Discord.",
+"يجب أن يكون اسم الشخصية ومظهرها مناسبين للرول بلاي.",
+"الجهل بالقوانين لا يعفي من المسؤولية."
+],
+
+itemsEn:[
+"Respect all community members and avoid intentional harassment.",
+"Exploiting bugs or glitches that negatively affect players is prohibited.",
+"Staff instructions and moderation decisions must be respected.",
+"Using unfair advantages is prohibited.",
+"Maintain respectful communication in text and voice channels.",
+"Posting content that violates community or Discord rules is prohibited.",
+"Character names and appearances must fit the roleplay environment.",
+"Not knowing the rules does not exempt you from responsibility."
+]
+},
+
+{
+titleAr:"قوانين الرول بلاي",
+titleEn:"Roleplay Rules",
+
+itemsAr:[
+"يجب الحفاظ على منطقية الشخصية والتصرف بما يتناسب مع أحداث الموقف.",
+"يمنع تحويل المواقف الجادة إلى مزاح يفسد تجربة الآخرين.",
+"يجب إعطاء المواقف الوقت الكافي وعدم محاولة إنهائها بطريقة غير منطقية.",
+"يمنع استخدام معلومات خارج الشخصية داخل الرول بلاي.",
+"يجب احترام تسلسل الأحداث وعدم تجاهل ما حدث سابقًا.",
+"يمنع الخروج من الشخصية دون سبب مقبول."
+],
+
+itemsEn:[
+"Keep your character's actions logical and appropriate to the situation.",
+"Do not turn serious situations into disruptive jokes.",
+"Give roleplay situations enough time to develop naturally.",
+"Do not use information your character does not know.",
+"Respect the continuity of roleplay events.",
+"Breaking character without a valid reason is prohibited."
+]
+},
+
+{
+titleAr:"قوانين الخوف على الحياة",
+titleEn:"Fear RP",
+
+itemsAr:[
+"يجب على الشخصية التعامل مع الخطر الذي يهدد حياتها بشكل منطقي.",
+"عند التعرض لتهديد مباشر، يجب إظهار الخوف المناسب للموقف.",
+"لا يجوز التصرف وكأن الشخصية غير قابلة للتعرض للخطر.",
+"يمنع تجاهل الأسلحة أو التهديدات الواضحة دون سبب منطقي.",
+"يجب إعطاء الأولوية لبقاء الشخصية عندما يكون الموقف يستدعي ذلك."
+],
+
+itemsEn:[
+"Your character must react logically to threats against their life.",
+"Direct threats should result in an appropriate fear response.",
+"Characters are not invincible and should not act as if they are.",
+"Do not ignore obvious weapons or threats without a logical reason.",
+"Character survival should be prioritized when appropriate."
+]
+},
+
+{
+titleAr:"قوانين تقدير الحياة",
+titleEn:"Value of Life",
+
+itemsAr:[
+"يجب تقدير حياة الشخصية في جميع المواقف.",
+"يمنع الدخول في مواجهة خطيرة دون سبب منطقي.",
+"يجب التفكير في نتائج التصرفات قبل تنفيذها.",
+"لا يجوز تعريض الشخصية للخطر لمجرد تحقيق مكسب بسيط.",
+"يجب التعامل مع الإصابات والمواقف الخطرة بما يتناسب مع أحداث الرول بلاي."
+],
+
+itemsEn:[
+"Your character's life must be valued in every situation.",
+"Avoid entering dangerous confrontations without a logical reason.",
+"Consider the consequences of your actions before taking them.",
+"Do not risk your character's life for minor gains.",
+"Treat injuries and dangerous situations according to the roleplay."
+]
+},
+
+{
+titleAr:"Meta Gaming",
+titleEn:"Meta Gaming",
+
+itemsAr:[
+"الميتا جيمينج هو استخدام معلومات حصلت عليها خارج الرول بلاي داخل الشخصية.",
+"يمنع استخدام معلومات Discord أو البث أو المحادثات الخارجية للحصول على أفضلية داخل السيرفر.",
+"المعلومات التي يعرفها اللاعب لا تعني بالضرورة أن الشخصية تعرفها.",
+"يجب الفصل بين معرفة اللاعب ومعرفة الشخصية."
+],
+
+itemsEn:[
+"Meta Gaming means using information obtained outside roleplay.",
+"Information from Discord, streams or external conversations cannot be used for unfair in-game advantage.",
+"Player knowledge does not automatically equal character knowledge.",
+"Keep player knowledge and character knowledge separate."
+]
+},
+
+{
+titleAr:"Power Gaming",
+titleEn:"Power Gaming",
+
+itemsAr:[
+"الباور جيمينج هو فرض أفعال غير منطقية على لاعب آخر دون إعطائه فرصة للتفاعل.",
+"يمنع استغلال أنظمة اللعبة لفرض نتائج غير واقعية.",
+"يجب إعطاء الطرف الآخر فرصة عادلة للرد على الموقف.",
+"يمنع القيام بأفعال تتجاوز حدود الشخصية أو الواقع المنطقي للرول بلاي."
+],
+
+itemsEn:[
+"Power Gaming means forcing unrealistic actions or outcomes onto another player.",
+"Do not exploit game mechanics to create unrealistic results.",
+"Give other players a fair opportunity to react.",
+"Do not perform actions beyond what is realistically possible."
+]
+},
+
+{
+titleAr:"نظام العقوبات",
+titleEn:"Punishment System",
+
+itemsAr:[
+"تختلف العقوبة حسب نوع المخالفة وتكرارها وتأثيرها على المجتمع.",
+"قد تبدأ العقوبات بالتنبيه أو التحذير وتصل إلى العقوبات الإدارية المناسبة.",
+"الإدارة تملك صلاحية اتخاذ الإجراء المناسب للحفاظ على النظام.",
+"تكرار المخالفات قد يؤدي إلى تشديد العقوبة.",
+"محاولة التحايل على العقوبة أو العودة بطرق مخالفة قد تؤدي إلى عقوبة إضافية."
+],
+
+itemsEn:[
+"Punishments depend on the type, frequency and impact of the violation.",
+"Penalties may range from warnings to appropriate administrative actions.",
+"Staff may take necessary action to maintain community order.",
+"Repeated violations may result in stronger punishment.",
+"Evading punishments may result in additional action."
+]
+}
+
+];
+
+
+function rulesPage(){
+
+return `
+
+<div class="page">
+
+    <a href="index.html" class="back">
+        ← ${language==="ar" ? "العودة إلى الرئيسية" : "Back to Home"}
+    </a>
+
+    <div class="page-head">
+
+        <span class="mini">RESPECT START RULEBOOK</span>
+
+        <h1>
+            ${language==="ar" ? "القوانين" : "Rules"}
+        </h1>
+
+        <p>
+            ${
+                language==="ar"
+                ?
+                "اقرأ القوانين والتزم بها للمحافظة على تجربة رول بلاي عادلة ومنظمة للجميع."
+                :
+                "Read and follow the rules to maintain a fair and organized roleplay experience for everyone."
+            }
+        </p>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>
+            ${language==="ar" ? "ملاحظة مهمة:" : "Important Note:"}
+        </strong>
+
+        ${
+            language==="ar"
+            ?
+            "هذه القوانين وضعت لحماية تجربة جميع اللاعبين. تقع مسؤولية معرفة القوانين والالتزام بها على عاتق كل عضو. عدم معرفة القانون لا يعفي من تطبيقه."
+            :
+            "These rules exist to protect everyone's experience. Every member is responsible for knowing and following them. Not knowing a rule does not exempt you from it."
+        }
+
+    </div>
+
+
+    ${rules.map((rule,index)=>`
+
+        <div class="rule-section">
+
+            <button onclick="toggleRule(${index})">
+
+                <span>
+                    ${language==="ar" ? rule.titleAr : rule.titleEn}
+                </span>
+
+                <span id="arrow-${index}">+</span>
+
+            </button>
+
+            <div class="rule-content" id="rule-${index}">
+
+                <ol>
+
+                    ${
+                        (language==="ar" ? rule.itemsAr : rule.itemsEn)
+                        .map(item=>`<li>${item}</li>`)
+                        .join("")
+                    }
+
+                </ol>
+
+            </div>
+
+        </div>
+
+    `).join("")}
+
+</div>
+
+`;
+
+}
+
+
+function toggleRule(index){
+
+    const content = document.getElementById("rule-"+index);
+    const arrow = document.getElementById("arrow-"+index);
+
+    if(!content) return;
+
+    content.classList.toggle("open");
+
+    arrow.textContent = content.classList.contains("open") ? "−" : "+";
+}
+
+
+/* =====================================================
+   RENDER
+===================================================== */
+
+function render(){
+
+    const params = new URLSearchParams(window.location.search);
+
+    const page = params.get("page");
+
+    let content;
+
+    if(page === "about"){
+        content = aboutPage();
+    }
+    else if(page === "rules"){
+        content = rulesPage();
+    }
+    else if(page === "store"){
+        content = storePage();
+    }
+    else if(page === "contact"){
+        content = contactPage();
+    }
+    else{
+        content = homePage();
+    }
+
+    document.getElementById("app").innerHTML = content;
+
+    applyLanguage();
+
+    window.scrollTo(0,0);
+}
+
+render();
+
+</script>
+
+</body>
+</html>
